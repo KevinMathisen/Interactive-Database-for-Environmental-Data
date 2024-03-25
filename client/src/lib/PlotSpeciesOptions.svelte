@@ -13,8 +13,8 @@
 
   // Options when choosing plot type
     const plotTypeOptions = [
-      { value: 'bar', label: 'Stolpediagram' },
-      { value: 'pie', label: 'Sektordiagram' }
+      { value: 'barchart', label: 'Stolpediagram' },
+      { value: 'piechart', label: 'Sektordiagram' }
     ]
 </script>
 

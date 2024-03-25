@@ -3,6 +3,8 @@
 
   export let chooseAll = true // If the user wants to choose all species
   export let customSpecies = [] // Custom species the user has chosen
+  export let includeOthers = false // If the user wants to include 'others' species as its own category
+  export let showIncludeOthers = false // If the 'others' category option should be displayed
 
   let inputSpecies = '' // Input in add species field
   let showSuggestions = false // If suggestions should be displayed
@@ -127,6 +129,13 @@
         <li>{capitalizeFirstLetter(species)} <button on:click={() => removeSpecies(species)}>x</button></li>
       {/each}
     </ul>
+
+    <!-- Option to include 'others' category -->
+    {#if showIncludeOthers}
+      <label>
+        <input type="checkbox" bind:checked={includeOthers}> Grupper og vis ikke valgte arter sammen
+      </label>
+    {/if}
   {/if}
 {/if}
 

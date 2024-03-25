@@ -18,6 +18,9 @@ app.get('/favicon.ico', (req, res) => res.status(204).end());
 // Handle requests for json data
 app.get('/:endpoint', (req, res) => {
 
+	// log the request
+	console.log(`GET request for ${req.params.endpoint}`);
+
 	// Extract the json file name from the request
 	const { endpoint } = req.params;
 	const filePath = path.join(__dirname, 'data', `${endpoint}.json`);

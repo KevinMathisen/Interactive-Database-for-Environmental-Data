@@ -168,7 +168,7 @@ export async function getRiverSummary (id) {
   try {
     // Get river summary data
     const fetchedRiversSummary = await fetchRiverSummary(id)
-    console.log('fetchedRiversSummary:', fetchedRiversSummary)
+
     // Update store with river
     updateStoreWithObject(riverStore, fetchedRiversSummary[0], River)
 
@@ -279,4 +279,20 @@ export async function getStationForDownload (id) {
  */
 export function getStationsForRiver (river) {
   return filtersStationsByRiver(river, get(stationStore))
+}
+
+/**
+ * Retrieves all observations under a given river
+ * @param {object} river - The river object, which has the ID of the stations
+ * @returns {Observation[]} - An array of observations under the given river
+ */
+export function getObservationsForRiver (river) {
+  const stations = getStationsForRiver(river)
+  let observations = []
+  stations.forEach(station => {
+    observations = [...observations, ...station.observations]
+  })
+
+  console.log('observations for river: ', observations)
+  return observations
 }

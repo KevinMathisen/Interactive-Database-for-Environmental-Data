@@ -3,7 +3,7 @@
  * @param {Observation[]} observations - The observations to calculate the amount of fish in
  * @returns {number} - The amount of fish in the observations
  */
-function amountOfFishInObservations (observations) {
+export function amountOfFishInObservations (observations) {
   return observations.reduce((amountOfFish, observation) => amountOfFish + observation.count, 0)
 }
 
@@ -30,7 +30,7 @@ export function amountOfFishInStations (stations) {
  * @param {Map<number, Station>} stations - The stations to calculate on
  * @returns {number} - The time spent fishing in all the stations
  */
-function secondsSpentFishingInStations (stations) {
+export function secondsSpentFishingInStations (stations) {
   return Array.from(stations.values()).reduce((secSpentFishing, station) => secSpentFishing + station.secFished, 0)
 }
 

@@ -12,14 +12,16 @@
     export let dataType = 'river'
 
     export let selectedSpecies = []
+    export let includeOthers = false
 
     export let showPlotA = true
     export let showValueA = 'absolute'
-    export let plotTypeA = 'bar'
+    export let plotTypeA = 'barchart'
 
     export let showPlotB = true
     export let intervallPlotB = 20
     export let plotTypeB = 'histogram'
+    export let combineSpecies = false
 
     let chooseAll = true // If the user wants to choose all species
     let customSpecies = [] // Species the user has chosen
@@ -57,7 +59,7 @@
 
     <!-- Input for choosing species -->
     <CollapsibleSection title="Art">
-        <SpeciesInput {selectableSpecies} bind:chooseAll bind:customSpecies />
+        <SpeciesInput {selectableSpecies} bind:chooseAll bind:customSpecies bind:includeOthers showIncludeOthers={true}/>
     </CollapsibleSection>
 
     <!-- Input for choosing how plot A is displayed -->
@@ -73,7 +75,8 @@
         <PlotLengthOptions
             bind:showPlotB
             bind:intervallPlotB
-            bind:plotTypeB />
+            bind:plotTypeB
+            bind:combineSpecies />
     </CollapsibleSection>
 
 </div>

@@ -39,7 +39,7 @@
        ? filterRiversByNameAndDateCombined(rivers, lowercaseInput)
        : filterStationsByNameAndDateCombined(stations, lowercaseInput)
 
-     // If the input is not a selectable species, display an error
+     // If the input is not a selectable data point, display an error
      if (selectedData.size !== 1) {
        displayError(dataTypeText + ' finnes ikke')
        return

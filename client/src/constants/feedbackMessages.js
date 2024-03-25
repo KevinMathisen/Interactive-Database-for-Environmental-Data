@@ -20,6 +20,7 @@ export const FEEDBACK_CODES = {
 export const FEEDBACK_MESSAGES = {
   UPLOAD_SUCCESS: 'Opplasting vellykket',
   GENERIC: 'En feil oppstod',
+  ERROR_PLOTTING_DATA: 'En feil oppstod under plotting av data',
   NO_FILE_SELCETED: 'Velg en fil før du klikker last opp',
   NO_FILE_FORMAT_SELECTED: 'Ingen filformat valgt, velg enten .xslx eller .csv for å laste ned',
   NOT_FOUND: 'Kunne ikke finne den forespurte ressursen',

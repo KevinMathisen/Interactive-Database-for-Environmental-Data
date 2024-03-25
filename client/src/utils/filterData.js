@@ -227,17 +227,17 @@ export function filterObservationsBySpecies (observations, species) {
 }
 
 /**
- * Finds all unqiue species from a list of rivers
- * @param {Map<number, object>} rivers - The list of rivers to find species from
+ * Finds all unqiue species from a list of rivers or stations
+ * @param {Map<number, ObservationPoint>} observationPoints - The list of rivers or stations to find species from
  * @returns {string[]} - A list of unique species
  */
-export function getSelectableSpecies (rivers) {
+export function getSelectableSpecies (observationPoints) {
   try {
     // Use set instead of array for faster lookups
     const speciesSet = new Set()
 
-    rivers.forEach(river => {
-      river[attributesToFilterOn.SPECIES].forEach(species => speciesSet.add(species))
+    observationPoints.forEach(observationPoint => {
+      observationPoint[attributesToFilterOn.SPECIES].forEach(species => speciesSet.add(species))
     })
 
     return Array.from(speciesSet)
